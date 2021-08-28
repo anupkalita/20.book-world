@@ -40,8 +40,6 @@ function loadData(e){
 
     arrow.addEventListener('click', function(e){
         if(e.target.classList.contains('fa-chevron-down')){
-            console.log(e.target.parentElement.nextElementSibling.classList);
-
             e.target.parentElement.nextElementSibling.classList.toggle("show");
         }
 
