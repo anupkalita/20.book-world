@@ -5,19 +5,16 @@ inputValue.addEventListener("keypress", loadData);
 
 function loadData(e){
     if(e.key === 'Enter'){
-        console.log(inputValue.value);
 
         const xhr = new XMLHttpRequest();
 
-        xhr.open('GET',`http://openlibrary.org/search/authors.json?q=${inputValue.value}`,true);
+        xhr.open('GET',`https://openlibrary.org/search/authors.json?q=${inputValue.value}`,true);
 
         xhr.onload = function(){
             if(this.status === 200){
                 let data = JSON.parse(this.responseText);
                 let output="";
                 data.docs.forEach(function(item){
-                    console.log(item);
-
                     output += `
                         <li class="author-name"><span>${item.name} <i class="fas fa-chevron-down"></i></span>
                         <ul class="author-details">
